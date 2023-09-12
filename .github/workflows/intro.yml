@@ -8,6 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - run: echo "Hello, world!"
+      - name: Install depencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
