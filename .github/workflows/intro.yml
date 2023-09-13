@@ -102,8 +102,7 @@ jobs:
 
       - name: Snapshot
         run: |
-             mkdir gen
-             chmod -R 777 gen
+             mkdir -m 777 gen
              docker run -i --init --cap-add=SYS_ADMIN -v ./gen:/home/pptruser/gen --network host ghcr.io/puppeteer/puppeteer:latest node -e "$(cat snapshot.js)" http://localhost:4173 ./gen
              mv gen/* static/
 
