@@ -109,6 +109,8 @@ jobs:
 
       - name: Push to git
         run: |
+              git config --global user.email "bedda.ayman.sio@gmail.com"
+              git config --global user.name "github-actions[bot]"
              git add static
              git commit -m "Update snapshot *{{ github.sha }}"
 
